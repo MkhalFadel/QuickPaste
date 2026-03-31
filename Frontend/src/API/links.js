@@ -1,7 +1,9 @@
+const API_URL = import.meta.env.VITE_API_URL
+
 export async function sendData(body)
 {
    try {
-      const res = await fetch('http://localhost:5000/api/links/', {
+      const res = await fetch(`${API_URL}/api/links/`, {
          method: 'POST',
          headers: { "Content-Type": 'application/json' },
          body: JSON.stringify(body)
@@ -16,7 +18,7 @@ export async function sendData(body)
 export async function getLinkInfo(id)
 {
    try {
-      const res = await fetch(`http://localhost:5000/api/links/view/${id}`);
+      const res = await fetch(`${API_URL}/api/links/view/${id}`);
       return await res.json();
    } catch (error) {
       console.log('API CALL ERROR:', error);
