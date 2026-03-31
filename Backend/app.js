@@ -5,7 +5,7 @@ const cors = require("cors");
 const linkRoutes = require("./Routes/createRoute")
 
 app.use(cors({
-   origin: "*"
+   origin: "https://quickpaste-qcderyfdv-mkhalfadels-projects.vercel.app/"
 }))
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
